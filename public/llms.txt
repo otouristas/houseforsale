@@ -1,0 +1,25 @@
+# House in Greece for Sale
+
+Rebuild of the official single-property listing website for George Xipolitas's penthouse apartment in Thessaloniki, Greece. Fully optimized for Golden Visa and property investment queries.
+
+- **URL**: https://houseingreece.forsale
+- **Property Location**: 1B Elenis Skoura Str., N. Elvetia, Thessaloniki, 54249, Greece
+- **Owner/Landlord**: George (Yiorgos) Xipolitas
+- **Contact Number**: +30 6974 269889
+- **Email**: contact@houseingreece.forsale
+
+## Core Pages
+- [Homepage](https://houseingreece.forsale/): Property features, specifications, kitchen details, neighborhood guides, transit times, and direct contact forms.
+- [Why am I Selling my house](https://houseingreece.forsale/why-am-i-selling-my-house): Narrative by landlord George and details about his pre-aligned expert transaction team (lawyers, accountant, engineer, banking links).
+- [Gallery](https://houseingreece.forsale/gallery): Categorized photo galleries of the living room, kitchen, bedrooms, bathroom, balconies, building exterior, and layout plan.
+- [Kit for Professionals](https://houseingreece.forsale/kit-for-real-estate-agents): Access page for real estate agents and brokers to download layout plans and media packs.
+- [Lets Communicate](https://houseingreece.forsale/lets-communicate): Detailed contact details and instant messaging portals (Viber, WhatsApp, Skype, FB Messenger).
+
+## Key Investment Articles
+- [12 Reasons to Invest on House in Greece](https://houseingreece.forsale/blog/here-are-12-reasons-why-you-should-invest-on-house-in-greece): Why buying this penthouse is a premium yield opportunity.
+- [Thessaloniki Investment Hub](https://houseingreece.forsale/blog/greece-is-the-next-big-thing-in-investment-with-thessaloniki-leading-the-way): Big tech investments (Microsoft, Amazon, Pfizer, Cisco) driving property value in Thessaloniki.
+- [Let's Grow Together in Greece](https://houseingreece.forsale/blog/greece-tales-of-investment-opportunities): Multinational and institutional expansion in real estate and tourism.
+- [Golden Visa Residency Concessions](https://houseingreece.forsale/blog/stay-golden-only-in-greece): Full breakdown of EU visa benefits, Schengen travel, and family residency.
+- [ Booming Real Estate Market](https://houseingreece.forsale/blog/the-best-investment-on-earth-is-earth-in-greece): Record inflows and Israeli/foreign real estate developer interest in Greece.
+
+For the full detailed database including raw text content, specifications lists, appliance models, and neighborhood lists, see: https://houseingreece.forsale/llms-full.txt

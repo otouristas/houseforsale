@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-gold: #c5bb73; /* Original theme color */
+  --color-primary-gold-dark: #b2a860;
+  --color-primary-gold-light: #dcd49b;
+  
+  --color-bg-light: #ffffff;
+  --color-bg-sand: #fbfbfa; /* Soft warm cream */
+  --color-bg-gray: #f5f5f3; /* Light grey */
+  
+  --color-text-dark: #2d2d2a; /* Warm charcoal */
+  --color-text-muted: #6b6b66; /* Muted charcoal */
+  
+  --font-sans: var(--font-inter);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #2d2d2a;
+  --card-bg: #fbfbfa;
+  --border-color: #e5e5e0;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Premium Light Design System Utilities */
+.glass-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(229, 229, 224, 0.5);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #c5bb73 0%, #8e833f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
