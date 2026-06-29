@@ -4,8 +4,11 @@ import Image from "next/image";
 import { ArrowRight, Scale, ShieldAlert, Award, FileText } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Why am I Selling my house",
+  title: "Why am I Selling my house | House in Greece for Sale",
   description: "Read a personal message from George (Yiorgos) regarding the sale of his contemporary penthouse in Thessaloniki, Greece.",
+  alternates: {
+    canonical: "/why-am-i-selling-my-house",
+  },
 };
 
 export default function WhySellingPage() {

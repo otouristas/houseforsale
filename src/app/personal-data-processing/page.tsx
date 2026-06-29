@@ -3,8 +3,11 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Personal Data Processing & Privacy Policy",
+  title: "Personal Data Processing & Privacy Policy | House in Greece for Sale",
   description: "Learn about how your personal details are processed when you fill out forms on House in Greece for Sale.",
+  alternates: {
+    canonical: "/personal-data-processing",
+  },
 };
 
 export default function PrivacyPolicyPage() {

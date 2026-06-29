@@ -25,8 +25,11 @@ export async function generateMetadata({ params }: RouteParams): Promise<Metadat
   }
 
   return {
-    title: post.title,
+    title: `${post.title} | House in Greece for Sale`,
     description: post.summary,
+    alternates: {
+      canonical: `/blog/${post.slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.summary,

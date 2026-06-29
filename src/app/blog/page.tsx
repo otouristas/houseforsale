@@ -5,8 +5,11 @@ import { ArrowRight, Calendar, User } from "lucide-react";
 import { blogPosts } from "@/data/blog";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Blog | House in Greece for Sale",
   description: "Stay updated with Greek property market trends, Thessaloniki technology expansions, and European Golden Visa updates.",
+  alternates: {
+    canonical: "/blog",
+  },
 };
 
 export default function BlogIndexPage() {
