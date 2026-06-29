@@ -22,14 +22,34 @@ export default function Footer() {
             <p className="text-gray-600 text-sm max-w-md leading-relaxed">
               A premium, contemporary 82.27 sqm penthouse apartment located on the quiet, high-class east side of Thessaloniki, Greece. Features fully furnished kitchen, natural gas heating, private parking, and high-yield potential for Golden Visa and Airbnb rentals.
             </p>
-            <div className="flex space-x-4 pt-2 text-xs">
+            <div className="flex flex-wrap gap-x-3 gap-y-2 pt-2 text-xs">
+              <a
+                href="https://facebook.com/houseingreece.forsale"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#c5bb73] hover:text-[#b2a860] flex items-center space-x-1 font-semibold"
+              >
+                <span>Facebook</span>
+                <ExternalLink size={10} />
+              </a>
+              <span className="text-gray-300">|</span>
+              <a
+                href="https://www.instagram.com/houseingreece.forsale/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#c5bb73] hover:text-[#b2a860] flex items-center space-x-1 font-semibold"
+              >
+                <span>Instagram</span>
+                <ExternalLink size={10} />
+              </a>
+              <span className="text-gray-300">|</span>
               <a
                 href="https://m.me/houseingreece.forsale"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#c5bb73] hover:text-[#b2a860] flex items-center space-x-1 font-semibold"
               >
-                <span>FB Messenger</span>
+                <span>Messenger</span>
                 <ExternalLink size={10} />
               </a>
               <span className="text-gray-300">|</span>
@@ -113,14 +133,23 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500">
+        <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col lg:flex-row justify-between items-center text-xs text-gray-500 gap-4">
           <p>&copy; {currentYear} House In Greece For Sale. All rights reserved. Direct sale from landlord George Xipolitas.</p>
-          <div className="mt-4 sm:mt-0 space-x-4">
+          <div className="mt-4 lg:mt-0 flex flex-wrap items-center gap-x-4 gap-y-2">
             <Link href="/personal-data-processing" className="hover:text-[#c5bb73] transition-colors">
               Privacy Policy
             </Link>
             <span>&bull;</span>
             <span className="opacity-60">No Agency Commission</span>
+            <span>&bull;</span>
+            <a
+              href="https://AnotherSEOGuru.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#c5bb73] transition-colors font-semibold"
+            >
+              Designed and SEO by AnotherSEOGuru.com
+            </a>
           </div>
         </div>
       </div>
