@@ -53,19 +53,34 @@ export default async function BlogPostPage({ params }: RouteParams) {
     notFound();
   }
 
-  // Simple custom markdown renderer to support basic syntax (Headings, Bullet points, Paragraphs)
+  // Simple custom markdown renderer supporting Headings, Bullets, Paragraphs, Bold (**), and Links ([lbl](url))
   const renderContent = (markdownText: string) => {
     const lines = markdownText.split("\n");
     let inList = false;
     const elements: React.ReactNode[] = [];
     let listItems: string[] = [];
 
+    const parseInline = (text: string) => {
+      // replace **bold** with <strong>bold</strong>
+      let html = text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+      // replace [anchor](url) with custom styled anchor tags
+      html = html.replace(
+        /\[(.*?)\]\((.*?)\)/g,
+        '<a href="$2" class="text-[#c5bb73] font-bold hover:underline">$1</a>'
+      );
+      return html;
+    };
+
     const flushList = (key: number) => {
       if (listItems.length > 0) {
         elements.push(
           <ul key={`list-${key}`} className="list-disc pl-6 my-4 space-y-2 text-gray-700">
             {listItems.map((item, idx) => (
-              <li key={idx} className="text-xs sm:text-sm leading-relaxed">{item}</li>
+              <li
+                key={idx}
+                className="text-xs sm:text-sm leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: parseInline(item) }}
+              />
             ))}
           </ul>
         );
@@ -81,9 +96,11 @@ export default async function BlogPostPage({ params }: RouteParams) {
         flushList(index);
         inList = false;
         elements.push(
-          <h3 key={index} className="text-lg sm:text-xl font-bold text-gray-900 mt-6 mb-3">
-            {trimmed.replace(/^###\s*/, "")}
-          </h3>
+          <h3
+            key={index}
+            className="text-lg sm:text-xl font-bold text-gray-900 mt-6 mb-3"
+            dangerouslySetInnerHTML={{ __html: parseInline(trimmed.replace(/^###\s*/, "")) }}
+          />
         );
       }
       // Heading 2
@@ -91,9 +108,11 @@ export default async function BlogPostPage({ params }: RouteParams) {
         flushList(index);
         inList = false;
         elements.push(
-          <h2 key={index} className="text-xl sm:text-2xl font-bold text-gray-900 mt-8 mb-4">
-            {trimmed.replace(/^##\s*/, "")}
-          </h2>
+          <h2
+            key={index}
+            className="text-xl sm:text-2xl font-bold text-gray-900 mt-8 mb-4"
+            dangerouslySetInnerHTML={{ __html: parseInline(trimmed.replace(/^##\s*/, "")) }}
+          />
         );
       }
       // Bullet lists
@@ -115,9 +134,11 @@ export default async function BlogPostPage({ params }: RouteParams) {
           inList = false;
         }
         elements.push(
-          <p key={index} className="text-xs sm:text-sm text-gray-650 leading-relaxed my-3">
-            {trimmed}
-          </p>
+          <p
+            key={index}
+            className="text-xs sm:text-sm text-gray-650 leading-relaxed my-3"
+            dangerouslySetInnerHTML={{ __html: parseInline(trimmed) }}
+          />
         );
       }
     });
