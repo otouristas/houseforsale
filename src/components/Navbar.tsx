@@ -39,18 +39,39 @@ export default function Navbar() {
     return pathname.startsWith(href);
   };
 
+  const isHome = pathname === "/";
+  const transparentHero = isHome && !isScrolled && !isOpen;
+
+  const headerClass = transparentHero
+    ? "bg-aegean-dark/20 backdrop-blur-sm border-b border-white/10 py-4"
+    : isScrolled
+      ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 py-2.5"
+      : "bg-white/80 border-b border-gray-50 py-4";
+
+  const linkClass = (href: string) => {
+    if (isActive(href)) {
+      return transparentHero
+        ? "text-primary-gold-light font-bold"
+        : "text-primary-gold font-bold";
+    }
+    return transparentHero
+      ? "text-white/90 hover:text-white"
+      : "text-gray-700 hover:text-primary-gold";
+  };
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 py-2.5"
-          : "bg-white/80 border-b border-gray-50 py-4"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerClass}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14">
           {/* Logo Image */}
-          <Link href="/" className="flex-shrink-0 relative w-48 h-12 transition-opacity hover:opacity-90">
+          <Link
+            href="/"
+            className={`flex-shrink-0 relative w-48 h-12 transition-opacity hover:opacity-90 ${
+              transparentHero ? "brightness-0 invert drop-shadow-md" : ""
+            }`}
+          >
             <Image
               src="https://houseingreece.forsale/wp-content/uploads/2020/06/HouseInGreeceStandard-E01-eR.png"
               alt="House in Greece for Sale Logo"
@@ -66,11 +87,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                  isActive(link.href)
-                    ? "text-[#c5bb73] font-bold"
-                    : "text-gray-700 hover:text-[#c5bb73]"
-                }`}
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${linkClass(link.href)}`}
               >
                 {link.name}
               </Link>
@@ -81,7 +98,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center">
             <a
               href="tel:+306974269889"
-              className="inline-flex items-center space-x-2 bg-[#c5bb73] hover:bg-[#b2a860] text-white font-bold px-5 py-2.5 rounded-full shadow-sm transition-all duration-200 text-sm"
+              className="inline-flex items-center space-x-2 bg-primary-gold hover:bg-primary-gold-dark text-white font-bold px-5 py-2.5 rounded-full shadow-sm transition-all duration-200 text-sm"
               id="nav-call-btn"
             >
               <Phone size={14} />
@@ -93,7 +110,11 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-md text-gray-700 hover:text-[#c5bb73] focus:outline-none"
+              className={`p-2 rounded-md focus:outline-none ${
+                transparentHero
+                  ? "text-white hover:text-primary-gold-light"
+                  : "text-gray-700 hover:text-primary-gold"
+              }`}
               aria-label="Toggle menu"
               id="mobile-menu-toggle"
             >
