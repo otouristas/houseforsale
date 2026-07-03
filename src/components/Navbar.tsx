@@ -68,9 +68,7 @@ export default function Navbar() {
           {/* Logo Image */}
           <Link
             href="/"
-            className={`flex-shrink-0 relative w-48 h-12 transition-opacity hover:opacity-90 ${
-              transparentHero ? "brightness-0 invert drop-shadow-md" : ""
-            }`}
+            className="flex-shrink-0 relative w-48 h-12 transition-opacity hover:opacity-90"
           >
             <Image
               src="https://houseingreece.forsale/wp-content/uploads/2020/06/HouseInGreeceStandard-E01-eR.png"
